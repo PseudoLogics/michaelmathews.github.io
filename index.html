@@ -3,8 +3,9 @@
 <head>
   <title>Michael Mathews — Portfolio</title>
   <style>
+    /* --- GLOBAL STYLES --- */
     body {
-      background: #0d0d0d;
+      background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 60%);
       color: #f0f0f0;
       font-family: Arial, sans-serif;
       padding: 40px;
@@ -30,15 +31,18 @@
       gap: 40px;
     }
 
-    /* --- PROJECT CARD --- */
+    /* --- PROJECT CARD (GLASS MORPHISM) --- */
     .project-card {
-      background: #111;
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.05);
       padding: 20px;
-      border-radius: 16px;
+      border-radius: 12px;
       box-shadow: 0 0 25px rgba(255,255,255,0.05);
       display: flex;
       flex-direction: column;
       gap: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-title {
@@ -48,13 +52,19 @@
       color: #fff;
     }
 
-    /* --- VIDEO WITH FIXED ASPECT RATIO --- */
+    /* --- VIDEO WRAPPER + HOVER EFFECT --- */
     .video-wrapper {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
       overflow: hidden;
       border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-wrapper:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(255,255,255,0.08);
     }
 
     .video-wrapper video {
@@ -63,7 +73,7 @@
       object-fit: cover;
     }
 
-    /* --- IMAGE ROW --- */
+    /* --- IMAGE ROW + HOVER EFFECT --- */
     .image-row {
       display: flex;
       gap: 10px;
@@ -74,10 +84,17 @@
       width: 32%;
       height: 100px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
+    .image-row img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,255,255,0.15);
+    }
+
+    /* --- DESCRIPTION TEXT --- */
     .description {
       font-size: 0.9rem;
       line-height: 1.5;
@@ -158,7 +175,6 @@
       </p>
     </div>
 
-    
     <!-- PROJECT 4 -->
     <div class="project-card">
       <h2 class="project-title">Voxel Zombie Shooter</h2>
@@ -187,7 +203,7 @@
 
       <div class="video-wrapper">
         <video autoplay loop muted playsinline>
-          <source src="gifs/CPlusPlusHTMLServer.mov" type="video/mov">
+          <source src="gifs/CPlusPlusHTMLServer.mp4" type="video/mp4">
         </video>
       </div>
 
@@ -203,13 +219,13 @@
       </p>
     </div>
 
-        <!-- PROJECT 6 -->
+    <!-- PROJECT 6 -->
     <div class="project-card">
       <h2 class="project-title">Python Tic-Tac-Toe</h2>
 
       <div class="video-wrapper">
         <video autoplay loop muted playsinline>
-          <source src="gifs/PythonGame.mov" type="video/mov">
+          <source src="gifs/PythonGame.mp4" type="video/mp4">
         </video>
       </div>
 
@@ -224,7 +240,6 @@
         placement validation, and win/loss.
       </p>
     </div>
-    
 
   </div>
 </body>
